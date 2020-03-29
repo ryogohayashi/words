@@ -1,0 +1,7 @@
+.form
+  = form_for @word, url:group_word_path do |f|
+    = f.text_field :word, class:'input_word', placeholder: 'type a word'
+    = f.text_field :meaning, class:'input_meaning', placeholder:'type a meaning'
+    = f.text_field :sentence, class:'input_sentence', placeholder:'type a sentence'
+    = f.file_field :image, class:'input_image'
+    = f.submit '登録', class:'submit'

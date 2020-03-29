@@ -1,0 +1,15 @@
+.kensaku_group
+  = search_form_for @search do |f|
+    = f.label :name_cont, "単語帳検索"
+    = f.search_field :name_cont
+    = f.submit "検索", class:"search"
+- @groups.each do |group|
+  .group_main
+    .group_name
+      = group.name
+    .detail_group 
+      = link_to '詳細', group_words_path(group),class:'btn-detail'
+    .edit_group
+      = link_to '編集', edit_group_path(id:group.id),class:'btn-edit'
+    .delete_group
+      = link_to '削除', group_path(id:group.id), method: :delete, class:'btn-delete'

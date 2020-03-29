@@ -1,0 +1,4 @@
+.form
+  = form_for @group do |f|
+    = f.text_field :name, class:'input_name', placeholder: 'type a name'
+    = f.submit '登録', class:'submit'
