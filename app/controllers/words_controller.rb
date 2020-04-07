@@ -4,6 +4,7 @@ class WordsController < ApplicationController
   def index
     @group = Group.find(params[:group_id])
     @words = @group.words
+    @word = Word.new
   end
 
   def new
@@ -12,7 +13,15 @@ class WordsController < ApplicationController
 
   def create
     @words = Word.create(word_params)
-    redirect_to group_words_path
+    if @words.save
+      respond_to do |format|
+        format.json
+        format.html
+      end
+    else
+      flash.now[:alert] = 'メッセージを入力してください。'
+      render :index
+    end
   end
 
   def edit

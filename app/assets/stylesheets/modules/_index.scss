@@ -3,73 +3,76 @@
   height: 100vh;
   width: 100%;
   background-color: beige;
-  .folk{
-    display: flex;
-    height: 150px;
+  .plate{
+    height: 100vh;
     width: 100%;
-    border-width: thick;
-    border-style: ridge;
-    .center{
-      height: 60px;
-      width: 33%;
+    .folk{
       display: flex;
-      flex-direction: column;
-      .textblock{
-        width: 100%;
+      height: 150px;
+      width: 100%;
+      border-width: thick;
+      border-style: ridge;
+      .center{
+        height: 60px;
+        width: 33%;
         display: flex;
-      }
-        .word{
-          height: 30px;
+        flex-direction: column;
+        .textblock{
           width: 100%;
-          margin-top: 10px;
-          margin-left: 10px;
-          border: ridge;
+          display: flex;
         }
-        .meaning{
-          height: 30px;
-          width: 100%;
-          margin-top: 10px;
-          margin-left: 10px;
-          border: ridge;
+          .word{
+            height: 30px;
+            width: 100%;
+            margin-top: 10px;
+            margin-left: 10px;
+            border: ridge;
+          }
+          .meaning{
+            height: 30px;
+            width: 100%;
+            margin-top: 10px;
+            margin-left: 10px;
+            border: ridge;
+          }
+      }
+        .image{
+          .image-image{
+          width: 413px;
+          text-align: center;
+          align-items: center;
+          }
+        }
+        .btnblock{
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          width: 413px;
+          .edit_word{
+            background-color: skyblue;
+            border-radius: 10px;
+            width: 70px;
+            text-align: center;
+            .edit_word_word{
+              color: white;
+              font-family: monospace;
+              font-weight: bold;
+            }
+          }
+          .delete_word{
+            background-color: skyblue;
+            border-radius: 10px;
+            width: 70px;
+            text-align: center;
+            .delete_word_word{
+              color: white;
+              font-family: monospace;
+              font-weight: bold;
+            }
+          }
         }
     }
-      .image{
-        .image-image{
-        width: 413px;
-        text-align: center;
-        align-items: center;
-        }
-      }
-      .btnblock{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        width: 413px;
-        .edit_word{
-          background-color: skyblue;
-          border-radius: 10px;
-          width: 70px;
-          text-align: center;
-          .edit_word_word{
-            color: white;
-            font-family: monospace;
-            font-weight: bold;
-          }
-        }
-        .delete_word{
-          background-color: skyblue;
-          border-radius: 10px;
-          width: 70px;
-          text-align: center;
-          .delete_word_word{
-            color: white;
-            font-family: monospace;
-            font-weight: bold;
-          }
-        }
-      }
   }
-
 }
 
 .word_register{
