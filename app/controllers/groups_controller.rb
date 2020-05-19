@@ -1,13 +1,12 @@
 class GroupsController < ApplicationController
   def index
-    @search = Group.ransack(params[:q])
-    @groups = @search.result
-    @group = Group.all
-  end
-
-  def new
+    @group = Group.all.order(created_at: "DESC").includes(:user)
     @groups = Group.new
   end
+
+  # def new
+  #   @groups = Group.new
+  # end
 
   def create
     @group = Group.create(group_params)
