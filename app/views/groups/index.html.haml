@@ -1,15 +1,35 @@
-.kensaku_group
-  = search_form_for @search do |f|
-    = f.label :name_cont, "単語帳検索"
-    = f.search_field :name_cont
-    = f.submit "検索", class:"search"
-- @groups.each do |group|
-  .group_main
-    .group_name
-      = group.name
-    .detail_group 
-      = link_to '詳細', group_words_path(group),class:'btn-detail'
-    .edit_group
-      = link_to '編集', edit_group_path(id:group.id),class:'btn-edit'
-    .delete_group
-      = link_to '削除', group_path(id:group.id), method: :delete, class:'btn-delete'
+.wordbook
+  %div{ class: 'wordbook__colums wordbook__colums--thick'} 
+    %div{ class: 'wordbook__colums__title'}
+      %div{ class: 'inter'} USER
+      %div{ class: 'inter__user'}
+  %div{ class: 'wordbook__colums wordbook__colums--thin'}
+    %div{ class: 'wordbook__colums__title'}
+      %div{ class: 'inter'} 
+        = link_to 'BOOKS',  new_group_path, class: 'BOOKS'
+        %i{ class: 'fas fas-book-open' }
+    .form
+      = form_for @groups do |f|
+        = f.text_field :name, class:'input_group', placeholder: 'type a name'
+        = f.submit 'register', class:'submit'
+    - @group.each do |g|
+      %div{ class: 'booklist' }
+        %div{ class: 'bookname' }
+          = link_to g.name, group_words_path(@group.ids)
+        %div{ class: 'bookbutton' }
+          %div{ class: 'editfunction' }
+            = link_to 'edit', edit_group_path(id:@group.ids)
+          %div{ class: 'deletefunction' }
+            = link_to 'delete', group_path(id:@group.ids), method: :delete
+  %div{ class: 'wordbook__word'}
+    -# %div{ class: 'cardlist'}
+    -#   %div{ class: 'wordbook__word__card'}
+    -#     %div{ class: 'cardcontent'}
+    -#     %div{ class: 'cardcontent'}
+    -# %div{ class: 'inputbox'}
+    -#   %div{ class: 'input'}
+    -#     %div{ class: 'inputmini'}
+    -#       %div{ class: 'cardcontent'}
+    -#       %div{ class: 'cardcontent'}
+    -#       %div{ class: 'smallbutton'}
+    -#   %div{ class: 'bigbutton'}
