@@ -99,5 +99,3 @@ words_tagsテーブル
 Association
 - belong_to : words
 - belong_to : tags
-
--------------------
