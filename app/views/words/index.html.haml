@@ -1,48 +1,39 @@
-.main_word_index
-  .word_register
+.wordbook
+  %div{ class: 'wordbook__colums wordbook__colums--thick'} 
+    %div{ class: 'wordbook__colums__title'}
+      %div{ class: 'inter'} USER
+      %div{ class: 'inter__user'}
+  %div{ class: 'wordbook__colums wordbook__colums--thin'}
+    %div{ class: 'wordbook__colums__title'}
+      %div{ class: 'inter'} 
+        = link_to 'BOOKS',  new_group_path, class: 'BOOKS'
+        %i{ class: 'fas fas-book-open' }
     .form
-      = form_with( model: @word, local:true, id: "new_word", url:group_words_path ) do |f|
-        = f.text_field :word, class:'input_word', placeholder: 'type a word'
-        = f.text_field :meaning, class:'input_meaning', placeholder:'type a meaning'
-        = f.text_field :sentence, class:'input_sentence', placeholder:'type a sentence'
-        = f.file_field :image, class:'input_image'
-        = f.submit '登録', class:'submit'
-    -# .register_btn
-    -#   = link_to '単語登録', new_group_word_path, class:'btn-register'
-  .kensaku_word
-    = form_with(url: search_group_word_path(id:@words.ids), local: true, method: :get, class: "search-form") do |f|
-      = f.text_field :keyword, placeholder:'投稿を検索する', class:'search_field'
-      = f.submit "検索", class:"search"
-  .plate
-    - @words.each do |word|
-      .folk
-        .center
-          .textblock
-            .word
-              = word.word
-            .meaning
-              = word.meaning
-          .sentence
-            = word.sentence
-          .check
-            =check_box_tag :check1
-            =label_tag :check1, 'Who'
-            =check_box_tag :check2
-            =label_tag :check2, 'When'
-            =check_box_tag :check3
-            =label_tag :check3, 'Where'
-            =check_box_tag :check4
-            =label_tag :check4, 'What'
-            =check_box_tag :check5
-            =label_tag :check5, 'Why'
-            =check_box_tag :check6
-            =label_tag :check6, 'How'
-        .image
-          .image-image
-            = image_tag word.image.url if word.image?
-        .btnblock
-          .edit_word
-            = link_to '編集', edit_group_word_path(id:word.id), class:"edit_word_word"
-          .delete_word
-            = link_to '削除', group_word_path(id:word.id), method: :delete, class:"delete_word_word"
-    
+      -# = form_for @groups, url: group_words_path do |f|
+      -#   = f.text_field :name, class:'input_group', placeholder: 'type a name'
+      -#   = f.submit 'register', class:'submit'
+    - @group.each do |g|
+      %div{ class: 'booklist' }
+        %div{ class: 'bookname' }
+          = g.name
+        %div{ class: 'bookbutton' }
+          %div{ class: 'editfunction' }
+            = link_to 'edit', edit_group_path(id:@group.ids)
+          %div{ class: 'deletefunction' }
+            = link_to 'delete', group_path(id:@group.ids), method: :delete
+  %div{ class: 'wordbook__word'}
+    %div{ class: 'cardlist'}
+      - @word.each do |w|
+        %div{ class: 'wordbook__word__card'}
+          %div{ class: 'cardcontent'}
+            = w.word
+          %div{ class: 'cardcontent'}
+            = w.meaning
+    %div{ class: 'inputbox'}
+      %div{ class: 'input'}
+        %div{ class: 'inputmini'}
+          = form_for @words, url: group_words_path do |f|
+            = f.text_field :word, class:'input_box', placeholder: 'type a word'
+            = f.text_field :meaning, class:'input_box', placeholder: 'type a meaning'
+            = f.submit 'register', class:'submit'
+      %div{ class: 'bigbutton'}    

@@ -11,21 +11,21 @@
     = javascript_include_tag 'application'
   %body
     %header
-      .header_main
-        .Anki
-          = link_to 'Anki', root_path, class:"title" 
-        .Name
-          - if user_signed_in?
-            = current_user.name
-          - else
-        .user_login
-          - if user_signed_in?
-            = link_to 'create group', new_group_path, class:"login-btn"
-            = link_to 'index group', groups_path, class:"login-btn"
-            = link_to 'log-out', destroy_user_session_path, method: :delete, class:"log-out-btn"
-          - else
-            = link_to 'log-in', new_user_session_path, class:"login-btn"
-            = link_to 'registration', new_user_registration_path, class:"registration-btn"
+      -# .header_main
+      -#   .Anki
+      -#     = link_to 'Anki', root_path, class:"title" 
+      -#   .Name
+      -#     - if user_signed_in?
+      -#       = current_user.name
+      -#     - else
+      -#   .user_login
+      -#     - if user_signed_in?
+      -#       = link_to 'create group', new_group_path, class:"login-btn"
+      -#       = link_to 'index group', groups_path, class:"login-btn"
+      -#       = link_to 'log-out', destroy_user_session_path, method: :delete, class:"log-out-btn"
+      -#     - else
+      -#       = link_to 'log-in', new_user_session_path, class:"login-btn"
+      -#       = link_to 'registration', new_user_registration_path, class:"registration-btn"
     .main
       = yield
     %footer

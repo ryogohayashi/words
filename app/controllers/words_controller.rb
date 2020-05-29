@@ -2,9 +2,10 @@ class WordsController < ApplicationController
   #before_action :move_to_index, except: [:index, :search]
 
   def index
-    @group = Group.find(params[:group_id])
-    @words = @group.words
-    @word = Word.new
+    @words = Word.new
+    @word = Word.all.order(created_at: "DESC").includes(:user)
+    @groups = Group.new
+    @group = Group.all.order(created_at: "DESC").includes(:user)
   end
 
   def new
@@ -15,8 +16,8 @@ class WordsController < ApplicationController
     @words = Word.create(word_params)
     if @words.save
       respond_to do |format|
-        format.json
-        format.html
+        format.json { render json: @words }
+        format.html { redirect_to action: 'index' }
       end
     else
       flash.now[:alert] = 'メッセージを入力してください。'

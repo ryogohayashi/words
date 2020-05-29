@@ -120,33 +120,185 @@
 
 
 // グループインデックス
-.group_main{
+.wordbook{
+  background-color: #D9E5FF;
+  height: 100vh;
+  width: 100%;
   display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-  background-color: beige;
-  .group_name{
+  
+  &__colums{
+    width: 200px;
+    height: 100vh;
+    justify-content: start;
+    overflow: scroll;
+    
+    &--thick{
+      background-color: #191970;
+    }
+    
+    &--thin{
+      background-color: #483D8B;
+    }
+  
+  }
+
+  &__colums__title{
+    width: 200px;
+    height: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-bottom: 15px;
+  }
+
+  .inter{
+    width: 150px;
+    height: 50px;
+    color: blanchedalmond;
+    font-weight: bold;
+    text-align: center;
+    
+    &__user{
+    width: 150px;
+    height: 50px;
+    color: blanchedalmond;
+    font-weight: bold;
+    text-align: center;
+    font-size: 50px;
+    padding: 10px;
+    margin-bottom: 15px;
+    overflow: scroll;
+    }
+  
+  }
+
+  .wordbook__word{
+    height: 100%;
+    width: calc(100% - 400px);
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    &__card{
+      width: 100%;
+      height: 50px;
+      background-color: #CCFFFF	;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      display: flex;
+
+    }
+  
+  }
+
+  .cardlist{
+    width: 100%;
+  }
+
+  .cardcontent{
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-color: green;
+    border: solid;
+
+  }
+
+  .inputbox{
+    width: 100%;
+    height: 100px;
+    display: flex;
+  }
+
+  .input{
+    height: 100%;
+    width: calc(100% - 100px);
+    padding-top: 50px;
+
+  }
+
+  .inputmini{
+    height: 50px;
+    background-color: #CCFFFF;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+
+  }
+
+  .smallbutton{
+    height: 50px;
     width: 100px;
-    text-align: center;
+    justify-content: center;
   }
-  .detail_group{
-    width: 70px;
-    text-align: center;
-    background-color: skyblue;
-    border-radius: 10px;
+
+  .bigbutton{
+    height: 100%;
+    width: 100px;
+    padding: 10px;
+
   }
-  .edit_group{
-    width: 70px;
-    text-align: center;
-    background-color: skyblue;
-    border-radius: 10px;
+
+  .BOOKS{
+    text-decoration: none;
+    color: white;
+    
   }
-  .delete_group{
-    width: 70px;
-    text-align: center;
-    background-color: skyblue;
-    border-radius: 10px;
+
+  .fas-book-open{
+    width: 20px;
+    height: 20px;
   }
+
+  .booklist{
+    width: 100%;
+    height: 50px;
+    padding: 5px;
+    display: flex;
+  }
+
+  .bookname{
+    width: calc(100% - 50px);
+    height: 100%;
+    justify-content: start;
+
+  }
+
+  .bookbutton{
+    width: 50px;
+    height: 100%;
+    justify-content: start;
+  }
+
+  .editfunction{
+    width: 100%;
+    height: 50%;
+
+  }
+
+  .deletefunction{
+    width: 100%;
+    height: 50%;
+
+
+  }
+
+}
+
+// グループnew
+
+input[type="text"] {
+  width: 120px;  
+}
+
+.form{
+  height: 30px;
+  margin-bottom: 20px;
+
 }
 
 .btn-detail{
@@ -178,6 +330,10 @@
   cursor: pointer;
 }
 
+.input_box[type="text"]{
+  width: 390px;
+  height: 40px;
+}
 
 //ホーム画面
 .index{
