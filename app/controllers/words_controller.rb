@@ -1,15 +1,10 @@
 class WordsController < ApplicationController
-  #before_action :move_to_index, except: [:index, :search]
 
   def index
     @words = Word.new
-    @word = Word.all.order(created_at: "DESC").includes(:user)
-    @groups = Group.new
+    @groups = Group.find(params[:group_id])
+    @word = @groups.words.includes(:user)
     @group = Group.all.order(created_at: "DESC").includes(:user)
-  end
-
-  def new
-    @words = Word.new
   end
 
   def create
@@ -51,7 +46,7 @@ class WordsController < ApplicationController
 
   private
   def word_params
-    params.require(:word).permit(:word, :meaning, :sentence, :image).merge(user_id: current_user.id, group_id: params[:group_id])
+    params.require(:word).permit(:word, :meaning).merge(user_id: current_user.id, group_id: params[:group_id])
   end
 
 end

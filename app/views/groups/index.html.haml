@@ -12,24 +12,13 @@
       = form_for @groups do |f|
         = f.text_field :name, class:'input_group', placeholder: 'type a name'
         = f.submit 'register', class:'submit'
-    - @group.each do |g|
+    - @group.each do |group|
       %div{ class: 'booklist' }
         %div{ class: 'bookname' }
-          = link_to g.name, group_words_path(@group.ids)
+          = link_to group.name, group_words_path(group)
         %div{ class: 'bookbutton' }
           %div{ class: 'editfunction' }
-            = link_to 'edit', edit_group_path(id:@group.ids)
+            = link_to 'edit', edit_group_path(group)
           %div{ class: 'deletefunction' }
-            = link_to 'delete', group_path(id:@group.ids), method: :delete
+            = link_to 'delete', group_path(group), method: :delete
   %div{ class: 'wordbook__word'}
-    -# %div{ class: 'cardlist'}
-    -#   %div{ class: 'wordbook__word__card'}
-    -#     %div{ class: 'cardcontent'}
-    -#     %div{ class: 'cardcontent'}
-    -# %div{ class: 'inputbox'}
-    -#   %div{ class: 'input'}
-    -#     %div{ class: 'inputmini'}
-    -#       %div{ class: 'cardcontent'}
-    -#       %div{ class: 'cardcontent'}
-    -#       %div{ class: 'smallbutton'}
-    -#   %div{ class: 'bigbutton'}

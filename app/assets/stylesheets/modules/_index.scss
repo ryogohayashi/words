@@ -156,6 +156,7 @@
     color: blanchedalmond;
     font-weight: bold;
     text-align: center;
+    font-family: fantasy;
     
     &__user{
     width: 150px;
@@ -172,7 +173,7 @@
   }
 
   .wordbook__word{
-    height: 100%;
+    height: 100vh;
     width: calc(100% - 400px);
     padding-left: 30px;
     padding-right: 30px;
@@ -194,16 +195,15 @@
   }
 
   .cardlist{
+    overflow: scroll;
     width: 100%;
+    height: calc(100vh - 150px );
   }
 
   .cardcontent{
     justify-content: center;
     width: 100%;
     height: 100%;
-    border-color: green;
-    border: solid;
-
   }
 
   .inputbox{
@@ -259,6 +259,11 @@
     height: 50px;
     padding: 5px;
     display: flex;
+    font-family: fantasy;
+    a{
+      color: white;
+      text-decoration: none;
+    }
   }
 
   .bookname{

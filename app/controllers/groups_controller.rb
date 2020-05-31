@@ -1,12 +1,9 @@
 class GroupsController < ApplicationController
+
   def index
-    @group = Group.all.order(created_at: "DESC").includes(:user)
+    @group = Group.all
     @groups = Group.new
   end
-
-  # def new
-  #   @groups = Group.new
-  # end
 
   def create
     @group = Group.create(group_params)
@@ -30,6 +27,7 @@ class GroupsController < ApplicationController
   end
 
   private
+
   def group_params
     params.require(:group).permit(:name).merge(user_id: current_user.id)
   end

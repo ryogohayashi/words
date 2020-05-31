@@ -1,6 +1,24 @@
-.aaa {
-  background-image: url("/images/sea-2470908_1280.jpg");
-  height: 800px;
-  background-size: cover;
-  width: 100%;
+.turtle{
+  background-image: url('/sea-kame.jpg');
+  background-position:center bottom;                     /* 画像の表示位置を指定 */
+  background-size:cover;                                 /* 画像のサイズを指定  */
+  width:100%;                                            /* 横幅のサイズを指定  */
+  height:100vh;           
+}
+
+.anki{
+  text-align: center;
+  font-family: fantasy;
+  font-size: 300px;
+  a{
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.welcome{
+  text-align: center;
+  color: white;
+  font-family: fantasy;
+  font-size: 100px;
 }

@@ -28,6 +28,7 @@ $(function(){
       let html = buildData(post);
       $('.cardlist').append(html);
       $('.input_box').val('');
+      $('input[type="submit"]').attr('disabled',false);
     })
     .fail(function(){
       alert('エラー');
