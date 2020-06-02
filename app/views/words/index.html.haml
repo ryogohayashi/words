@@ -3,25 +3,34 @@
     %div{ class: 'wordbook__colums__title'}
       %div{ class: 'inter'} USER
       %div{ class: 'inter__user'}
+        - if user_signed_in?
+          = current_user.name
+        - else
+      %div{ class: 'inter__user'}
+        - if user_signed_in?
+          = link_to 'log-out', destroy_user_session_path, method: :delete, class:"log-out-btn"
+        - else
+          = link_to 'log-in', new_user_session_path, class:"login-btn"
+          = link_to 'registration', new_user_registration_path, class:"registration-btn"
   %div{ class: 'wordbook__colums wordbook__colums--thin'}
     %div{ class: 'wordbook__colums__title'}
       %div{ class: 'inter'} 
         = link_to 'BOOKS',  new_group_path, class: 'BOOKS'
         %i{ class: 'fas fas-book-open' }
     .form
-      -# = form_for @groups, url: group_words_path do |f|
-      -#   = f.text_field :name, class:'input_group', placeholder: 'type a name'
-      -#   = f.submit 'register', class:'submit'
     - @group.each do |g|
       %div{ class: 'booklist' }
         %div{ class: 'bookname' }
-          = g.name
+          = link_to g.name, '/groups'
         %div{ class: 'bookbutton' }
           %div{ class: 'editfunction' }
             = link_to 'edit', edit_group_path(id:@group.ids)
           %div{ class: 'deletefunction' }
             = link_to 'delete', group_path(id:@group.ids), method: :delete
   %div{ class: 'wordbook__word'}
+    %div{ class: 'search'}
+      %input{ type: 'text', id: 'keyword', class: 'search_box'}
+      %button{ type: 'button', id: 'submit-search', class: 'submitbtn' } search
     %div{ class: 'cardlist'}
       - @word.each do |w|
         %div{ class: 'wordbook__word__card'}
