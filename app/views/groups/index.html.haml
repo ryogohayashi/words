@@ -3,6 +3,15 @@
     %div{ class: 'wordbook__colums__title'}
       %div{ class: 'inter'} USER
       %div{ class: 'inter__user'}
+        - if user_signed_in?
+          = current_user.name
+        - else
+      %div{ class: 'inter__user'}
+        - if user_signed_in?
+          = link_to 'log-out', destroy_user_session_path, method: :delete, class:"log-out-btn"
+        - else
+          = link_to 'log-in', new_user_session_path, class:"login-btn"
+          = link_to 'registration', new_user_registration_path, class:"registration-btn"
   %div{ class: 'wordbook__colums wordbook__colums--thin'}
     %div{ class: 'wordbook__colums__title'}
       %div{ class: 'inter'} 
@@ -10,7 +19,7 @@
         %i{ class: 'fas fas-book-open' }
     .form
       = form_for @groups do |f|
-        = f.text_field :name, class:'input_group', placeholder: 'type a name'
+        = f.text_field :name, class:'input_group', placeholder: 'create books'
         = f.submit 'register', class:'submit'
     - @group.each do |group|
       %div{ class: 'booklist' }

@@ -157,6 +157,7 @@
     font-weight: bold;
     text-align: center;
     font-family: fantasy;
+    color: white;
     
     &__user{
     width: 150px;
@@ -164,10 +165,16 @@
     color: blanchedalmond;
     font-weight: bold;
     text-align: center;
-    font-size: 50px;
+    font-size: 16px;
     padding: 10px;
     margin-bottom: 15px;
     overflow: scroll;
+    font-family: fantasy;
+    color: white;
+    a{
+      color: white;
+      text-decoration: none;
+    }
     }
   
   }
