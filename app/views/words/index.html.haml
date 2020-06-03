@@ -18,26 +18,28 @@
         = link_to 'BOOKS',  new_group_path, class: 'BOOKS'
         %i{ class: 'fas fas-book-open' }
     .form
-    - @group.each do |g|
+    - @group.each do |group|
       %div{ class: 'booklist' }
         %div{ class: 'bookname' }
-          = link_to g.name, '/groups'
+          = link_to group.name, '/groups'
         %div{ class: 'bookbutton' }
           %div{ class: 'editfunction' }
-            = link_to 'edit', edit_group_path(id:@group.ids)
+            = link_to 'edit', edit_group_path(id:group)
           %div{ class: 'deletefunction' }
-            = link_to 'delete', group_path(id:@group.ids), method: :delete
+            = link_to 'delete', group_path(id:group), method: :delete
   %div{ class: 'wordbook__word'}
     %div{ class: 'search'}
       %input{ type: 'text', id: 'keyword', class: 'search_box'}
       %button{ type: 'button', id: 'submit-search', class: 'submitbtn' } search
     %div{ class: 'cardlist'}
-      - @word.each do |w|
+      - @word.each do |word|
         %div{ class: 'wordbook__word__card'}
           %div{ class: 'cardcontent'}
-            = w.word
+            = word.word
           %div{ class: 'cardcontent'}
-            = w.meaning
+            = word.meaning
+          %div{ class: 'cardcontent__delete'}
+            = link_to 'delete', group_word_path(id:word), method: :delete 
     %div{ class: 'inputbox'}
       %div{ class: 'input'}
         %div{ class: 'inputmini'}
