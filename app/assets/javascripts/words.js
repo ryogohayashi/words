@@ -8,6 +8,9 @@ $(function(){
                   <div class="cardcontent">
                     ${post.meaning}
                   </div>
+                  <div class="cardcontent__delete">
+                    <a rel="nofollow" data-method="delete" href="/groups/${post.group_id}/words/${post.id}">delete</a>
+                  </div>
                 </div>`
     return html;
   }
