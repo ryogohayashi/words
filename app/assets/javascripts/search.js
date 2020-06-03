@@ -8,7 +8,10 @@ $(function(){
                     ${word.word}
                   </div>
                   <div class="cardcontent">
-                    ${word.meaning}
+                    ${word.meanig}
+                  </div>
+                  <div class="cardcontent__delete">
+                    <a rel="nofollow" data-method="delete" href="/groups/${word.group_id}/words/${word.id}">delete</a>
                   </div>
                 </div>`
     search_list.append(html);
