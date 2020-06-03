@@ -1,11 +1,7 @@
 class Word < ApplicationRecord
   belongs_to :user
   belongs_to :group
-
-  def self.search(search)
-    return Word.all unless search
-    Word.where(['word LIKE ?', "%#{search}%"])
-  end
+  acts_as_list scope: :parent
 
   mount_uploader :image, ImageUploader
 
