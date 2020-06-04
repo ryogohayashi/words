@@ -3,7 +3,7 @@ class WordsController < ApplicationController
   def index
     @words = Word.new
     @groups = Group.find(params[:group_id])
-    @word = @groups.words.includes(:user)
+    @word = @groups.words.rank(:row_order).includes(:user)
     @group = Group.all.order(created_at: "DESC").includes(:user)
   end
 
@@ -44,9 +44,15 @@ class WordsController < ApplicationController
     end
   end
 
+  def sort
+    word = Word.find(params[:word_id])
+    word.update(word_params)
+    render body: nil 
+  end
+
   private
   def word_params
-    params.require(:word).permit(:word, :meaning).merge(user_id: current_user.id, group_id: params[:group_id])
+    params.require(:word).permit(:word, :meaning, :row_order_position).merge(user_id: current_user.id, group_id: params[:group_id])
   end
 
 end
