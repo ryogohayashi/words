@@ -7,5 +7,8 @@ Rails.application.routes.draw do
         get 'search'
       end
     end
+    resources :words do 
+      put :sort
+    end
   end
 end
