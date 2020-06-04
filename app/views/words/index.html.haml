@@ -33,7 +33,7 @@
       %button{ type: 'button', id: 'submit-search', class: 'submitbtn' } search
     %div{ class: 'cardlist'}
       - @word.each do |word|
-        %div{ class: 'wordbook__word__card'}
+        %div{ class: 'wordbook__word__card', id: "word-#{word.id}", data: { model_name: word.class.name.underscore, update_url: group_word_sort_path(word_id:word.id)}}
           %div{ class: 'cardcontent'}
             = word.word
           %div{ class: 'cardcontent'}
