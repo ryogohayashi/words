@@ -13,7 +13,7 @@ $(function(){
       })
     },
     stop: function(e, ui){
-      ui.item.children('.wordbook__word__card').effect('highlight', { color: "#FFFFCC" },500 )
+      ui.item.children('div').not('#modalWindow').not('#overlay').not('.cardcontent__delete').effect('highlight', { color: "#FFFFCC" },500 )
     }
   });
 });
