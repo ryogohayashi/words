@@ -21,13 +21,12 @@ class WordsController < ApplicationController
   end
 
   def edit
-    @word = Word.find(params[:id])
   end
 
   def update
     word = Word.find(params[:id])
     word.update(word_params)
-    redirect_to group_words_path
+    redirect_to action: 'index'
   end
 
   def destroy
