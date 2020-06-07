@@ -20,10 +20,13 @@ UI/UXを意識して日々アップデート中・・・
 - 機能3　単語検索機能★jQueryを用いたAjaxでのインクリメンタルサーチを実装しているため、膨大な登録数になってもすぐに検索できます！
 - 機能4　ユーザー登録機能
 - 機能5　ドラッグ・アンド・ドロップ機能★追加実装：jQuery-UIを用いて、登録した単語の並び替えができます！覚えたい単語を上に持ってくるなど使い方の幅が広がります！
+- 機能６ 単語編集機能★追加実装：modalを用いて編集機能を実装！一度登録した単語をページ遷移せずに気軽に編集できます！
 
 <img width="1440" alt="Anki②" src="https://user-images.githubusercontent.com/60648197/83815317-e909f480-a6fa-11ea-8717-6e64c506c0df.png">
 
 <img width="1440" alt="Anki③" src="https://user-images.githubusercontent.com/60648197/83815555-646ba600-a6fb-11ea-9a9a-411c19d3e667.png">
+
+<img width="1440" alt="Anki④" src="https://user-images.githubusercontent.com/60648197/83982696-92ebba00-a963-11ea-8052-4443f27d4309.png">
 
  
 ## 必要要件
