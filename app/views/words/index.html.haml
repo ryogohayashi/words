@@ -23,8 +23,14 @@
         %div{ class: 'bookname' }
           = link_to group.name, '/groups'
         %div{ class: 'bookbutton' }
-          %div{ class: 'editfunction' }
-            = link_to 'edit', edit_group_path(id:group)
+          %div{ class: 'editfunction', id: "edit-#{group.id}" } edit
+          %div{ id: 'overlay' }
+          %div{ id: 'modalWindow' }
+            = form_for group, url: group_path(id:group) do |f|
+              = f.text_field :name, value: group.name, class: 'edit-space', id: "edit_group-#{group.id}"
+              %div{ class: 'edit-update' }
+                = f.submit :update, id: "submit-update-#{group.id}", class: 'update-btn'
+                %button{ type: 'button', id: "submit-#{group.id}", class: 'cancel-btn' } cancel
           %div{ class: 'deletefunction' }
             = link_to 'delete', group_path(id:group), method: :delete
   %div{ class: 'wordbook__word'}
