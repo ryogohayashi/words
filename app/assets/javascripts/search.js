@@ -8,7 +8,10 @@ $(function(){
                     ${word.word}
                   </div>
                   <div class="cardcontent">
-                    ${word.meanig}
+                    ${word.meaning}
+                  </div>
+                  <div class="cardcontent__edit" id="edit-${word.id}">
+                    edit
                   </div>
                   <div class="cardcontent__delete">
                     <a rel="nofollow" data-method="delete" href="/groups/${word.group_id}/words/${word.id}">delete</a>
