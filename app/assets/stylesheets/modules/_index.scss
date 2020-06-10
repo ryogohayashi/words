@@ -322,6 +322,28 @@
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
   }
 
+  .download_csv{
+    cursor: pointer;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+    font-weight: normal;
+    border: none;
+    border-radius: 2px;
+    padding: 0 16px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #26a69a;
+    text-align: center;
+    letter-spacing: .5px;
+    height: 32.4px;
+    line-height: 32.4px;
+    font-size: 13px;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    -webkit-tap-highlight-color: transparent;
+    vertical-align: top;
+  }
+
 }
 
 // グループnew
