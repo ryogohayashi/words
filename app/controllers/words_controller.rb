@@ -4,6 +4,10 @@ class WordsController < ApplicationController
     @words = Word.new
     @groups = Group.find(params[:group_id])
     @word = @groups.words.rank(:row_order).includes(:user)
+    respond_to do |format|
+      format.html
+      format.csv { send_data render_to_string, filename: "words.csv", type: :csv }
+    end
     @group = Group.all.order(created_at: "DESC").includes(:user)
   end
 
