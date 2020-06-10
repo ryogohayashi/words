@@ -21,13 +21,14 @@ UI/UXを意識して日々アップデート中・・・
 - 機能4　ユーザー登録機能
 - 機能5　ドラッグ・アンド・ドロップ機能★追加実装：jQuery-UIを用いて、登録した単語の並び替えができます！覚えたい単語を上に持ってくるなど使い方の幅が広がります！
 - 機能６ 単語編集機能★追加実装：modalを用いて編集機能を実装！一度登録した単語をページ遷移せずに気軽に編集できます！
-
+- 機能７　csv出力機能★追加実装：登録した単語をcsvに出力させる機能。紙ベースで持ち出したい時に大変便利です！
 <img width="1440" alt="Anki②" src="https://user-images.githubusercontent.com/60648197/83815317-e909f480-a6fa-11ea-8717-6e64c506c0df.png">
 
 <img width="1440" alt="Anki③" src="https://user-images.githubusercontent.com/60648197/83815555-646ba600-a6fb-11ea-9a9a-411c19d3e667.png">
 
 <img width="1440" alt="Anki④" src="https://user-images.githubusercontent.com/60648197/83982696-92ebba00-a963-11ea-8052-4443f27d4309.png">
 
+<img width="1440" alt="Anki⑥" src="https://user-images.githubusercontent.com/60648197/84311028-8c488700-ab9d-11ea-846e-63aef5499acf.png">
  
 ## 必要要件
  
