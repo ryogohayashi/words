@@ -37,6 +37,7 @@
     %div{ class: 'search'}
       %input{ type: 'text', id: 'keyword', class: 'search_box', placeholder: 'type a word' }
       %button{ type: 'button', id: 'submit-search', class: 'submitbtn' } search
+      %div{ class: 'download_csv' } my words download(csv)
     %div{ class: 'cardlist'}
       - @word.each do |word|
         %div{ class: 'wordbook__word__card', id: "word-#{word.id}", data: { model_name: word.class.name.underscore, update_url: group_word_sort_path(word_id:word.id)}}
