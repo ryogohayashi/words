@@ -80,8 +80,9 @@ wordsテーブル
 | meaning | string | null: false |
 | sentence | string | null: false |
 | image | string | null: false |
-| users_id | integer | null: false, foreign_key: ture |
-| tags_id | integer | null: false, foreign_key: ture |
+| user_id | integer | null: false, foreign_key: ture |
+| group_id | integer | null: false, foreign_key: ture |
+| row_order | integer| null: false |
 Association
 - belong_to : users
 - has_many : words_tags
