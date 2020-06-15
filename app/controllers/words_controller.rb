@@ -8,7 +8,8 @@ class WordsController < ApplicationController
       format.html
       format.csv { send_data render_to_string, filename: "words.csv", type: :csv }
     end
-    @group = Group.all.order(created_at: "DESC").includes(:user)
+    @user = User.find(current_user[:id])
+    @group = @user.groups.order(created_at: "DESC").includes(:user)
   end
 
   def create
