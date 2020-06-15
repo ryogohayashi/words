@@ -1,8 +1,9 @@
 class GroupsController < ApplicationController
 
   def index
-    @group = Group.all
     @groups = Group.new
+    @user = User.find(current_user[:id])
+    @group = @user.groups.order(created_at: "DESC").includes(:user)
   end
 
   def create
