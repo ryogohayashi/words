@@ -35,7 +35,7 @@
             = link_to 'delete', group_path(id:group), method: :delete
   %div{ class: 'wordbook__word'}
     %div{ class: 'search'}
-      %input{ type: 'text', id: 'keyword', class: 'search_box', placeholder: 'type a word' }
+      %input{ type: 'text', id: 'keyword', class: 'search_box', placeholder: 'type a word', maxlength: '10', onpaste: "return false" }
       %button{ type: 'button', id: 'submit-search', class: 'submitbtn' } search
       = link_to '▼ my words download(csv)', group_words_path(format: :csv), class: 'download_csv'
     %div{ class: 'cardlist'}
@@ -59,6 +59,6 @@
     %div{ class: 'inputbox'}
       %div{ class: 'input'}
         = form_for @words, url: group_words_path do |f|
-          = f.text_field :word, class:'input_box', placeholder: 'type a word'
-          = f.text_field :meaning, class:'input_box', placeholder: 'type a meaning'
+          = f.text_field :word, class:'input_box', placeholder: 'type a word', maxlength: '50', onpaste: "return false"
+          = f.text_field :meaning, class:'input_box', placeholder: 'type a meaning', maxlength: '50', onpaste: "return false"
           = f.submit 'register', class:'submit-rg'
